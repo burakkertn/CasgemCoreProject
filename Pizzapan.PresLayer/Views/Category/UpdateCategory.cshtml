@@ -1,0 +1,17 @@
+﻿@model PizzaPan.EntityLayer.Concrete.Category
+
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori Güncelleme Sayfası</h2>
+<form method="post">
+    @Html.HiddenFor(x => x.CategoryID)
+    @Html.Label("Servis Başlığı")
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+  
+
+    <button class="btn btn-success">Kategoriyi Güncelle</button>
+</form>
