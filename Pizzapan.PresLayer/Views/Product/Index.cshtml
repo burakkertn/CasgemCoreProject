@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
 }
 
 <h2>Ürünler</h2>
@@ -17,20 +18,20 @@
     </tr>
     @foreach (var item in Model)
     {
-
+        count++;
         <tr>
-            <td>@item.CategoryID</td>
+            <td>@count</td>
             <td>@item.Name</td>
             <td>@item.Des</td>
             <td>@item.ImageURL</td>
             <td>@item.Price</td>
 
 
-            <td><a href="/Product/DeleteProduct/@item.ProductID" class="btn btn-danger">Sil</a></td>
-            <td><a href="/Product/UpdateProduct/@item.ProductID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Contact/DeletContact/@item.ProductID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Contact/UpdateContact/@item.ProductID" class="btn btn-success">Güncelle</a></td>
 
         </tr>
     }
 </table>
 <br />
-<a href="/Product/AddProduct" class="btn btn-primary">Yeni Kategori Ekle</a>
+<a href="/Contact/AddContact" class="btn btn-primary">Yeni Kategori Ekle</a>

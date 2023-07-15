@@ -9,5 +9,6 @@ namespace Pizzapan.BusinessLayer.Abstact
 {
     public interface IProductService : IGenericService<Product>
     {
+        public List<Product> TGetProductWithCategory();
     }
 }

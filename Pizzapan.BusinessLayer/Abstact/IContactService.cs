@@ -9,5 +9,6 @@ namespace Pizzapan.BusinessLayer.Abstact
 {
     public interface IContactService : IGenericService<Contact>
     {
+        List<Contact> TGetConnactBySubject();
     }
 }

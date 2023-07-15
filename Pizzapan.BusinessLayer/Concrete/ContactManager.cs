@@ -28,6 +28,11 @@ namespace Pizzapan.BusinessLayer.Concrete
            return _contactDal.GetById(id);
         }
 
+        public List<Contact> TGetConnactBySubject()
+        {
+           return _contactDal.GetConnactBySubject();
+        }
+
         public List<Contact> TGetList()
         {
             return _contactDal.GetList();
