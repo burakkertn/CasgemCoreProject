@@ -4,18 +4,16 @@ namespace Pizzapan.PresentationLayer.Models
 {
     public class RegisterViewModel
     {
-        [Required(ErrorMessage = "Ad Boş Geçilemez.")]
+        [Required(ErrorMessage = "Ad Alanı Boş Geçilemez")]
         public string Name { get; set; }
-
         public string Surname { get; set; }
-        [Required(ErrorMessage = "Mail Boş Geçilemez.")]
-        public string email { get; set; }
 
-        public string Username { get; set; }
+        [Required(ErrorMessage = "Email Alanı Boş Geçilemez")]
+        public string Email { get; set; }
+        public string UserName { get; set; }
         public string Password { get; set; }
+
         [Compare("Password", ErrorMessage = "Şifreler Uyuşmuyor")]
-        public string ConfrimPassword { get; set; }
-
-
+        public string ConfirmPassword { get; set; }
     }
 }

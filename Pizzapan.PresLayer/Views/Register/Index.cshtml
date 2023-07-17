@@ -1,4 +1,4 @@
-﻿@using Pizzapan.PresentationLayer.Models;
+﻿
 @model RegisterViewModel
 @{
     Layout = null;
@@ -18,18 +18,18 @@
         <input type="text" asp-for="Surname" class="form-control" />
         <br />
         <label>Kullanıcı Adı</label>
-        <input type="text" asp-for="Username" class="form-control" />
+        <input type="text" asp-for="UserName" class="form-control" />
         <br />
         <label>Email</label>
-        <input type="email" asp-for="email" class="form-control" />
+        <input type="email" asp-for="Email" class="form-control" />
         <br />
         <label>Şifreniz</label>
         <input type="password" asp-for="Password" class="form-control" />
         <br />
         <label>Şifre Tekrar</label>
-        <input type="password" asp-for="ConfrimPassword" class="form-control" />
+        <input type="password" asp-for="ConfirmPassword" class="form-control" />
         <br />
         <button class="btn btn-primary">Kayıt Ol</button>
-
+        <div class="text-danger" asp-validation-summary="ModelOnly"> </div>
     </div>
 </form>

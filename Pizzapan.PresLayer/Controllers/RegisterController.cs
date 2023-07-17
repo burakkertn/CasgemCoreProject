@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Pizzapan.PresentationLayer.Models;
 using PizzaPan.EntityLayer.Concrete;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+
 
 namespace Pizzapan.PresentationLayer.Controllers
 {
@@ -15,6 +18,7 @@ namespace Pizzapan.PresentationLayer.Controllers
         {
             _userManager = userManager;
         }
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -22,27 +26,40 @@ namespace Pizzapan.PresentationLayer.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> IndexAsync(RegisterViewModel model)
+        public async Task<IActionResult> Index(RegisterViewModel model)
         {
 
-
-            if (ModelState.IsValid)
+            AppUser appUser = new AppUser()
             {
-                AppUser appUser = new AppUser()
-                {
-                    Name = model.Name,
-                    SurName = model.Surname,
-                    Email = model.email,
-                    UserName = model.Username,
-                };
+                Name = model.Name,
+                SurName = model.Surname,
+                Email = model.Email,
+                UserName = model.UserName,
+            };
 
-                await _userManager.CreateAsync(appUser, model.Password);
-                return RedirectToAction("Index", "Login");
+            if (model.Password == model.ConfirmPassword)
+            {
+                var result = await _userManager.CreateAsync(appUser, model.Password);
+
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Login");
+                }
+                else
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
+                }
             }
             else
             {
-                return View();
+                ModelState.AddModelError("", "Şifreler Eşleşmiyor");
             }
+            return View();
+
 
         }
     }
