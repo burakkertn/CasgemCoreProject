@@ -26,5 +26,7 @@ namespace Pizzapan.DataAccessLayer.Concrete
 
         public DbSet<Discount> discounts { get; set; }
 
+        public DbSet<ProductImage> ProductImages { get; set; }
+
     }
 }

@@ -13,5 +13,7 @@ namespace PizzaPan.EntityLayer.Concrete
         public string SurName { get; set; }
         public string  City { get; set; }
 
+        public int? ConfrimCode { get; set; }
+
     }
 }
