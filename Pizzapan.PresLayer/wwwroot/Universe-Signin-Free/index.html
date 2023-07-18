@@ -1,8 +1,7 @@
-﻿@model LoginViewModel
-@{
-    Layout = null;
-}
-
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+-->
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -18,35 +17,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- style CSS -->
-    <link rel="stylesheet" href="~/Universe-Signin-Free/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <!-- //Head -->
+
 <!-- Body -->
 
 <body>
 
     <section class="main">
-       
+        <div class="logo text-center">
+            <h1> <a href="index.html"> Universe Sign In Form</a></h1>
+        </div>
         <div class="content-w3ls text-center">
-            <img src="~/Universe-Signin-Free/images/admin.png" alt="" class="img-responsive">
+            <img src="images/admin.png" alt="" class="img-responsive">
             <form action="#" method="post">
                 <div class="wthree-field">
-                    <input asp-for="Username" id="text1" type="text" value="" placeholder="Kullanıcı adınız" required>
+                    <input name="text1" id="text1" type="text" value="" placeholder="Username" required>
                 </div>
                 <div class="wthree-field">
-                    <input asp-for ="Password" id="myInput" type="Password" placeholder="Şifreniz">
+                    <input name="password" id="myInput" type="Password" placeholder="Password">
                 </div>
                 <div class="wthree-field">
-                    <button href="/Register/Index" type="submit" class="btn">Giriş Yap</button>
+                    <button type="submit" class="btn">Sign In</button>
                 </div>
                 <div class="login-bottom">
-                    <a href="/Register/Index" class="">Üye Ol</a>
+                    <a href="#url" class="">Create An Account</a>
                 </div>
             </form>
         </div>
-    
+        <div class="copyright">
+            <p>© 2020 Universe Signin Form. Made with love | Designed by <a
+                href="https://w3layouts.com" target="_blank">W3layouts</a></p>
+        </div>
     </section>
 
 </body>
